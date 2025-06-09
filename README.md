@@ -17,6 +17,20 @@
 
 ---
 
+## When to Use This
+
+Use `pretty-php-log` when you want to:
+
+- **Tail** your PHP error log in real time
+- Highlight specific warnings (like `Undefined`)
+- Quickly debug syntax or fatal errors
+- Clean up noisy multi-line `PHP message:` entries
+- Strip repetitive docroot paths from output
+
+This tool is designed for **live log monitoring**, not full historical log parsing.
+
+---
+
 ## 🚀 Installation
 
 ```bash
