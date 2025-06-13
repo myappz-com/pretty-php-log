@@ -113,6 +113,9 @@ Here's what your PHP logs look like with `pretty-php-log`:
 
 ![image](https://github.com/user-attachments/assets/759f8369-6259-4521-ae18-82c7fcbe2e95)
 
+![image](https://github.com/user-attachments/assets/bd94b6a6-4062-45c0-8ca3-ae5037cdd44c)
+
+
 
 
 
