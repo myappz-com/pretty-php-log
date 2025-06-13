@@ -15,8 +15,13 @@ MAX_LINES=0
 
 # --- Color codes ---
 RED=$'\033[0;31m'
+LIGHT_RED='\033[1;91m'
+ALARM_RED='\033[38;5;196m'
 YELLOW=$'\033[1;33m'
 MAGENTA=$'\033[1;35m'
+BLUE='\033[0;34m'
+LIGHT_BLUE='\033[1;34m'
+NOTICE_BLUE='\033[38;5;39m'
 CYAN=$'\033[0;36m'
 NC=$'\033[0m'
 
@@ -102,11 +107,11 @@ tail -F "$LOGFILE" | while IFS= read -r line; do
         if [[ "$subline" == *"PHP Warning:"* ]]; then
             prefix=$([[ $USE_EMOJI == true ]] && echo "⚠️  " || echo "${YELLOW}[WARNING]${NC} ")
         elif [[ "$subline" == *"PHP Fatal error:"* ]]; then
-            prefix=$([[ $USE_EMOJI == true ]] && echo "🔴 " || echo "${RED}[FATAL]${NC} ")
+            prefix=$([[ $USE_EMOJI == true ]] && echo "🔴 " || echo "${LIGHT_RED}[FATAL]${NC} ")
         elif [[ "$subline" == *"PHP Parse error:"* ]]; then
-            prefix=$([[ $USE_EMOJI == true ]] && echo "🛑 " || echo "${RED}[PARSE]${NC} ")
+            prefix=$([[ $USE_EMOJI == true ]] && echo "🛑 " || echo "${ALARM_RED}[PARSE]${NC} ")
         elif [[ "$subline" == *"PHP Notice:"* ]]; then
-            prefix=$([[ $USE_EMOJI == true ]] && echo "ℹ️  " || echo "${YELLOW}[NOTICE]${NC} ")
+            prefix=$([[ $USE_EMOJI == true ]] && echo "ℹ️  " || echo "${NOTICE_BLUE}[NOTICE]${NC} ")
         fi
 
         # --- Highlight ---
